@@ -8,6 +8,7 @@ const foreCast = require('./utils/foreCast');
 // console.log(__filename);
 // console.log(path.join(__dirname, '../public'))
 let app = express();
+const port = process.env.PORT || 3000;
 
 //Define path for Express config
 let publicDirectoryPath = path.join(__dirname, '../public');
@@ -100,6 +101,9 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log('Server started');
+// app.listen(3000, () => {
+//     console.log('Server started');
+// })
+app.listen(port, () => {
+    console.log('Server started on port '+port);
 })
