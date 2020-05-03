@@ -1,7 +1,3 @@
-console.log('This is from Public Directory');
-
-
-
 const weatherform = document.querySelector('form');
 const search = document.querySelector('input');
 let messageone = document.querySelector('#message-1');
