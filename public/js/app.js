@@ -3,6 +3,7 @@ const search = document.querySelector('input');
 let messageone = document.querySelector('#message-1');
 let messagetwo = document.querySelector('#message-2');
 let messagethree = document.querySelector('#message-3');
+let messagefour = document.querySelector('#message-4');
 
 weatherform.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -12,6 +13,7 @@ weatherform.addEventListener('submit', (e) => {
     messageone.textContent = 'Loading...';
     messagetwo.textContent = '';
     messagethree.textContent = '';
+    messagefour.textContent = '';
     fetch('/weather?address=' + value).then((response) => {
         response.json().then((data) => {
             if (data.error) {
@@ -24,6 +26,7 @@ weatherform.addEventListener('submit', (e) => {
                 //console.log(data.foreCast);
                 messagetwo.textContent = data.foreCast;
                 messagethree.textContent = "Current Temperature : " + data.temperature;
+                messagefour.textContent = "Observation Time : " + data.Observation_Time;
             }
         })
     })

@@ -13,7 +13,8 @@ let foreCast = function (latitude, longitude, callback) {
           callback(undefined,{
               location: response.body.location.name,
               temperature: response.body.current.temperature,
-              climate: response.body.current.weather_descriptions[0]
+              climate: response.body.current.weather_descriptions[0],
+              observationTime : response.body.current.observation_time
           });
       }
     });
