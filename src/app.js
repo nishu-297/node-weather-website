@@ -73,7 +73,8 @@ app.get('/weather', (req, res) => {
                 location : data.location,
                 address : req.query.address,
                 temperature : foreCast.temperature,
-                Observation_Time :foreCast.observationTime
+                Observation_Time :foreCast.observationTime,
+                humidity: foreCast.humidity
                 
             })
 

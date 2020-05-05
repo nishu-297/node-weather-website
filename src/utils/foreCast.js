@@ -14,7 +14,8 @@ let foreCast = function (latitude, longitude, callback) {
               location: response.body.location.name,
               temperature: response.body.current.temperature,
               climate: response.body.current.weather_descriptions[0],
-              observationTime : response.body.current.observation_time
+              observationTime : response.body.current.observation_time,
+              humidity : response.body.current.humidity
           });
       }
     });

@@ -4,6 +4,7 @@ let messageone = document.querySelector('#message-1');
 let messagetwo = document.querySelector('#message-2');
 let messagethree = document.querySelector('#message-3');
 let messagefour = document.querySelector('#message-4');
+let messagefive = document.querySelector('#message-5');
 
 weatherform.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -14,6 +15,7 @@ weatherform.addEventListener('submit', (e) => {
     messagetwo.textContent = '';
     messagethree.textContent = '';
     messagefour.textContent = '';
+    messagefive.textContent='';
     fetch('/weather?address=' + value).then((response) => {
         response.json().then((data) => {
             if (data.error) {
@@ -27,6 +29,7 @@ weatherform.addEventListener('submit', (e) => {
                 messagetwo.textContent = data.foreCast;
                 messagethree.textContent = "Current Temperature : " + data.temperature;
                 messagefour.textContent = "Observation Time : " + data.Observation_Time;
+                messagefive.textContent = "Humidity : "+data.humidity;
             }
         })
     })
